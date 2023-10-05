@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\CobaController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,12 +23,8 @@ Route::get('info', function () {
     echo 'info';
 });
 
-Route::get('register', function () {
-    echo '<button>register</button>';
-});
+Route::get('register', [RegisterController::class, 'index']);
 
 Route::get('/show', [NewsController::class, 'show']);
 
 Route::get('/create', [NewsController::class, 'create']);
-
-Route::get('/user/{id}', [CobaController::class, 'sepuh'])->name('user.profile');
